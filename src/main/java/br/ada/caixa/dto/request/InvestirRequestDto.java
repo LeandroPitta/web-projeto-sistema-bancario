@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @ToString
-public class DepositoRequestDto {
+public class InvestirRequestDto {
 
     private String idConta;
     private BigDecimal valor;

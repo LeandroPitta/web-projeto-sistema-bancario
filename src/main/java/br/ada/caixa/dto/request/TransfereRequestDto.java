@@ -4,14 +4,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.math.BigDecimal;
-
 @Getter
 @Setter
 @ToString
-public class DepositoRequestDto {
+public class TransfereRequestDto {
 
-    private String idConta;
-    private BigDecimal valor;
+    private String idContaOrigem;
+    private String idContaDestino;
+    private Double valor;
 
 }

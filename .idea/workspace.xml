@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82e83c04-77ea-41cb-8791-a30a7e4f9ccf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/SistemaBancarioMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/OperacoesBancariasController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/DepositoRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/config/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ClienteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ContaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/InvestirRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/SaqueRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/TransfereRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/SaldoResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/OperacoesBancariasService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/OperacoesBancariasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/OperacoesBancariasController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/DepositoRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/DepositoRequestDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +34,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "LeandroPitta"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/LeandroPitta/web-projeto-sistema-bancario.git",
+    "accountId": "e482d955-43a4-45d5-bc66-c3dd3d33b99d"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -37,16 +56,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.SistemaBancarioMain.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.web-projeto-sistema-bancario [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.web-projeto-sistema-bancario [package].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.SistemaBancarioMain.executor": "Run",
+    "Maven.web-projeto-sistema-bancario [clean].executor": "Run",
+    "Maven.web-projeto-sistema-bancario [package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Dev/Java/AdaTech/web-projeto-sistema-bancario/pom.xml",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="SistemaBancarioMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.ada.caixa.SistemaBancarioMain" />
@@ -77,5 +101,16 @@
       <updated>1715253922933</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

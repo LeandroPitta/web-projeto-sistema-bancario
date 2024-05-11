@@ -1,4 +1,4 @@
-package br.ada.caixa.dto.request;
+package br.ada.caixa.dto.response;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,9 +9,9 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @ToString
-public class DepositoRequestDto {
+public class SaldoResponseDto {
 
     private String idConta;
-    private BigDecimal valor;
+    private BigDecimal saldo;
 
 }
