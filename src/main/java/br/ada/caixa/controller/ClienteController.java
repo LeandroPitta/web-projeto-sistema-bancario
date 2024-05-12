@@ -1,17 +1,30 @@
 package br.ada.caixa.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import br.ada.caixa.dto.request.ClientePFRequestDto;
+import br.ada.caixa.dto.request.ClientePJRequestDto;
+import br.ada.caixa.dto.response.ClientePFResponseDto;
+import br.ada.caixa.dto.response.ClientePJResponseDto;
+import br.ada.caixa.service.ClienteService;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/clientes")
+@RequestMapping("/cliente")
 public class ClienteController {
 
-    @PostMapping("/cadastro")
-    public void cadastrarCliente() {
+    final private ClienteService clienteService;
 
+    public ClienteController(ClienteService clienteService) {
+        this.clienteService = clienteService;
+    }
+
+    @PostMapping("/pf")
+    public ClientePFResponseDto cadastrarClientePF(@RequestBody ClientePFRequestDto clientePFRequestDto) {
+        return clienteService.cadastrarClientePF(clientePFRequestDto);
+    }
+
+    @PostMapping("/pj")
+    public ClientePJResponseDto cadastrarClientePJ(@RequestBody ClientePJRequestDto clientePJRequestDto) {
+        return clienteService.cadastrarClientePJ(clientePJRequestDto);
     }
 
     @GetMapping("/{idCliente}")

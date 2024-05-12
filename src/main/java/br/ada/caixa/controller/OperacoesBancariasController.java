@@ -20,37 +20,27 @@ public class OperacoesBancariasController {
 
     @PostMapping("/deposito")
     public void depositar(@RequestBody DepositoRequestDto depositoRequestDto) {
-
         operacoesBancariasService.depositar(depositoRequestDto);
-
     }
 
     @PostMapping ("/saque")
     public void sacar(@RequestBody SaqueRequestDto saqueRequestDto) {
-
         operacoesBancariasService.sacar(saqueRequestDto);
-
     }
 
     @PostMapping("/transfere")
     public void transferir(@RequestBody TransfereRequestDto transfereRequestDto) {
-
         operacoesBancariasService.transferir(transfereRequestDto);
-
     }
 
     @GetMapping("/saldo/{idConta}")
     public SaldoResponseDto consultarSaldo(@PathVariable String idConta) {
-
         return operacoesBancariasService.consultarSaldo(idConta);
-
     }
 
     @PostMapping("/investimento")
     public void investir(@RequestBody InvestirRequestDto investirRequestDto) {
-
         operacoesBancariasService.investir(investirRequestDto);
-
     }
 
 }
