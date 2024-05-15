@@ -26,8 +26,8 @@ public class ClienteController {
     }
 
     @PostMapping("/pj")
-    public ClientePJResponseDto cadastrarClientePJ(@RequestBody ClientePJRequestDto clientePJRequestDto) {
-        return clienteService.cadastrarClientePJ(clientePJRequestDto);
+    public void cadastrarClientePJ(@RequestBody ClientePJRequestDto clientePJRequestDto) {
+        clienteService.cadastrarClientePJ(clientePJRequestDto);
     }
 
     @GetMapping("/{idCliente}")

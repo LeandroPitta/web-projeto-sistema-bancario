@@ -18,7 +18,9 @@ public abstract class Conta {
     private Long id;
 
 
-    private String idCliente;
+    @ManyToOne
+    @JoinColumn(name="idCliente", referencedColumnName="documento", nullable=false)
+    private Cliente cliente;
 
     private BigDecimal saldo;
     private LocalDate dataAbertura;

@@ -10,4 +10,5 @@ import lombok.ToString;
 public class ClientePJRequestDto {
     private String cnpj;
     private String razaoSocial;
+    private String nomeFantasia;
 }
