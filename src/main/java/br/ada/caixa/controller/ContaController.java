@@ -19,8 +19,8 @@ public class ContaController {
     }
 
     @PostMapping
-    public ContaResponseDto abrirConta(@RequestBody ContaRequestDto contaRequestDto) {
-        return contaService.abrirConta(contaRequestDto);
+    public void abrirConta(@RequestBody ContaRequestDto contaRequestDto) {
+        contaService.abrirConta(contaRequestDto);
     }
 
 }

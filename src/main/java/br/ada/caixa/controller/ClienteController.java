@@ -5,6 +5,8 @@ import br.ada.caixa.dto.request.ClientePJRequestDto;
 import br.ada.caixa.dto.response.ClientePFResponseDto;
 import br.ada.caixa.dto.response.ClientePJResponseDto;
 import br.ada.caixa.service.ClienteService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,8 +20,9 @@ public class ClienteController {
     }
 
     @PostMapping("/pf")
-    public ClientePFResponseDto cadastrarClientePF(@RequestBody ClientePFRequestDto clientePFRequestDto) {
-        return clienteService.cadastrarClientePF(clientePFRequestDto);
+    public ResponseEntity<?> cadastrarClientePF(@RequestBody ClientePFRequestDto clientePFRequestDto) {
+        clienteService.cadastrarClientePF(clientePFRequestDto);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     @PostMapping("/pj")
