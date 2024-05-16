@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @ToString
 public class ContaResponseDto {
 
-    private Long id;
+    private Long numeroConta;
     private BigDecimal saldo;
     private LocalDate dataAbertura;
 

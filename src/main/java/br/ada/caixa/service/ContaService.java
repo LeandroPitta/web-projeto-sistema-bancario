@@ -29,15 +29,16 @@ public class ContaService {
     }
 
     public void abrirConta(ContaRequestDto contaRequestDto) {
-        Conta instanciaConta = contaFactory.getConta(contaRequestDto.getTipoConta());
-        Conta conta = modelMapper.map(contaRequestDto, instanciaConta.getClass());
-        conta.setSaldo(BigDecimal.valueOf(0));
-        conta.setDataAbertura(LocalDate.now());
 
         Cliente cliente = clienteRepository.findById(contaRequestDto.getDocumentoCliente())
                 .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
 
+        Conta instanciaConta = contaFactory.getConta(contaRequestDto.getTipoConta());
+        Conta conta = modelMapper.map(contaRequestDto, instanciaConta.getClass());
         conta.setCliente(cliente);
+        conta.setSaldo(BigDecimal.valueOf(0));
+        conta.setDataAbertura(LocalDate.now());
+
         contaRepository.save(conta);
     }
 }

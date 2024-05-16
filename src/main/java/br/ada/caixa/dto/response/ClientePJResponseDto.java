@@ -11,7 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class ClientePJResponseDto {
+public class ClientePJResponseDto implements ClienteResponseDto{
     private String cnpj;
     private String razaoSocial;
     private LocalDate dataCadastro;

@@ -4,19 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82e83c04-77ea-41cb-8791-a30a7e4f9ccf" name="Changes" comment="Iniciando desenvolvimento das regras de negocio.">
+    <list default="true" id="82e83c04-77ea-41cb-8791-a30a7e4f9ccf" name="Changes" comment="Desenvolvimento das regras de negocio.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ClienteResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/factory/ClienteResponseDtoFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/config/AppConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/ClientePFRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/ClientePFRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/ClientePJRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/ClientePJRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ContaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ContaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/ContaRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/ContaRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ClientePFResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ClientePFResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ClientePJResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ClientePJResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ContaResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ContaResponseDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/entity/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/entity/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/entity/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/entity/Conta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/ClienteService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/ContaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/ContaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,22 +58,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.SistemaBancarioMain.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.web-projeto-sistema-bancario [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.web-projeto-sistema-bancario [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.web-projeto-sistema-bancario [package].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lspit/Downloads/Programação Web II - Aula 5 - 13 de mai/banco-web/banco-web&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.SistemaBancarioMain.executor": "Run",
+    "Maven.web-projeto-sistema-bancario [clean].executor": "Run",
+    "Maven.web-projeto-sistema-bancario [install].executor": "Run",
+    "Maven.web-projeto-sistema-bancario [package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/lspit/Downloads/web-estoque",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="SistemaBancarioMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.ada.caixa.SistemaBancarioMain" />
@@ -142,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715774195014</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Desenvolvimento das regras de negocio.">
+      <option name="closed" value="true" />
+      <created>1715863312014</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715863312014</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,6 +171,7 @@
     <MESSAGE value="Inicio do desenvolvimento de entity e reopsitory." />
     <MESSAGE value="Desenvolvendo repository." />
     <MESSAGE value="Iniciando desenvolvimento das regras de negocio." />
-    <option name="LAST_COMMIT_MESSAGE" value="Iniciando desenvolvimento das regras de negocio." />
+    <MESSAGE value="Desenvolvimento das regras de negocio." />
+    <option name="LAST_COMMIT_MESSAGE" value="Desenvolvimento das regras de negocio." />
   </component>
 </project>

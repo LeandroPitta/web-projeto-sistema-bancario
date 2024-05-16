@@ -3,6 +3,7 @@ package br.ada.caixa.controller;
 import br.ada.caixa.dto.request.ContaRequestDto;
 import br.ada.caixa.dto.response.ContaResponseDto;
 import br.ada.caixa.service.ContaService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ public class ContaController {
     }
 
     @PostMapping
-    public void abrirConta(@RequestBody ContaRequestDto contaRequestDto) {
+    public void abrirConta(@RequestBody @Valid ContaRequestDto contaRequestDto) {
         contaService.abrirConta(contaRequestDto);
     }
 

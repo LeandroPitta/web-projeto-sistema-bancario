@@ -19,7 +19,6 @@ public class ContaRequestDto {
     private String documentoCliente;
 
     @NotNull
-    @NotBlank
     private TipoConta tipoConta;
 
 }
