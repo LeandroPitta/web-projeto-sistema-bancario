@@ -15,7 +15,7 @@ import java.time.LocalDate;
 public class Cliente {
 
     @Id
-    private String documento;
+    private String documentoCliente;
 
     @Enumerated(EnumType.STRING)
     private Status status;

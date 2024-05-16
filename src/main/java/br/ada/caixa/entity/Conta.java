@@ -13,13 +13,14 @@ import java.time.LocalDate;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="tipo_conta", discriminatorType = DiscriminatorType.STRING, length = 15)
 public abstract class Conta {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long numeroConta;
 
 
     @ManyToOne
-    @JoinColumn(name="idCliente", referencedColumnName="documento", nullable=false)
+    @JoinColumn(name="documentoCliente", referencedColumnName="documentoCliente", nullable=false)
     private Cliente cliente;
 
     private BigDecimal saldo;

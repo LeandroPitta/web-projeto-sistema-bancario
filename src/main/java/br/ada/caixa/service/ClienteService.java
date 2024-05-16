@@ -25,10 +25,6 @@ public class ClienteService {
     public ClienteService(ClienteRepository clienteRepository, ModelMapper modelMapper) {
         this.clienteRepository = clienteRepository;
         this.modelMapper = modelMapper;
-        this.modelMapper.typeMap(ClientePFRequestDto.class, ClientePF.class)
-                .addMapping(ClientePFRequestDto::getCpf, ClientePF::setDocumento);
-        this.modelMapper.typeMap(ClientePJRequestDto.class, ClientePJ.class)
-                .addMapping(ClientePJRequestDto::getCnpj, ClientePJ::setDocumento);
     }
 
     public void cadastrarClientePF(ClientePFRequestDto clientePFRequestDto) {
