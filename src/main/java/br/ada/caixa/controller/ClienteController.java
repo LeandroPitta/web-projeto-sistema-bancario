@@ -1,10 +1,10 @@
 package br.ada.caixa.controller;
 
+import br.ada.caixa.dto.filter.ClienteFilterDto;
 import br.ada.caixa.dto.request.ClientePFRequestDto;
 import br.ada.caixa.dto.request.ClientePJRequestDto;
-import br.ada.caixa.dto.response.ClientePFResponseDto;
-import br.ada.caixa.dto.response.ClientePJResponseDto;
 import br.ada.caixa.dto.response.ClienteResponseDto;
+import br.ada.caixa.dto.response.ClienteResponsePageDto;
 import br.ada.caixa.service.ClienteService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -38,7 +38,11 @@ public class ClienteController {
     }
 
     @GetMapping
-    public void pesquisarClientes() {
+    public ClienteResponsePageDto pesquisarClientes(ClienteFilterDto filter,
+                                                    @RequestParam(defaultValue = "0") int page,
+                                                    @RequestParam(defaultValue = "" + Integer.MAX_VALUE) int size) {
+
+        return clienteService.pesquisarClientes(filter, page, size);
 
     }
 

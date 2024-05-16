@@ -4,20 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82e83c04-77ea-41cb-8791-a30a7e4f9ccf" name="Changes" comment="Desenvolvimento das regras de negocio.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ClienteResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/factory/ClienteResponseDtoFactory.java" afterDir="false" />
+    <list default="true" id="82e83c04-77ea-41cb-8791-a30a7e4f9ccf" name="Changes" comment="Desenvolvimento do fluxo de pesquisar cliente.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/filter/ClienteFilterDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ClienteResponsePageDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/config/AppConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ContaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ContaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/ContaRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/ContaRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ClientePFResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ClientePFResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ClientePJResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ClientePJResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ContaResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ContaResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/entity/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/entity/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/repository/ClienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/repository/ClienteRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/ClienteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/ContaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/ContaService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715863312014</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Desenvolvimento do fluxo de pesquisar cliente.">
+      <option name="closed" value="true" />
+      <created>1715879336460</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715879336460</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,6 +173,7 @@
     <MESSAGE value="Desenvolvendo repository." />
     <MESSAGE value="Iniciando desenvolvimento das regras de negocio." />
     <MESSAGE value="Desenvolvimento das regras de negocio." />
-    <option name="LAST_COMMIT_MESSAGE" value="Desenvolvimento das regras de negocio." />
+    <MESSAGE value="Desenvolvimento do fluxo de pesquisar cliente." />
+    <option name="LAST_COMMIT_MESSAGE" value="Desenvolvimento do fluxo de pesquisar cliente." />
   </component>
 </project>
