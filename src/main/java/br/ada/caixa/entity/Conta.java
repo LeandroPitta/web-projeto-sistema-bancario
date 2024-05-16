@@ -24,5 +24,7 @@ public abstract class Conta {
     private Cliente cliente;
 
     private BigDecimal saldo;
+
     private LocalDate dataAbertura;
+
 }

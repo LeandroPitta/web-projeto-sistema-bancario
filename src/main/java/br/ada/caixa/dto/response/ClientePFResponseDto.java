@@ -14,6 +14,7 @@ import java.util.List;
 public class ClientePFResponseDto implements ClienteResponseDto{
     private String cpf;
     private String nome;
+    private LocalDate dataNascimento;
     private LocalDate dataCadastro;
     private Status status;
     private List<ContaResponseDto> contas;

@@ -69,7 +69,11 @@ public class ClienteService {
     public ClienteResponsePageDto pesquisarClientes(ClienteFilterDto filter, int page, int size) {
 
         Pageable pageable = PageRequest.of(page, size);
-        Page<Cliente> clientesPage = clienteRepository.pesquisarPage(pageable);
+        Page<Cliente> clientesPage = clienteRepository.pesquisarPage(
+                filter.getTipoCliente() != null ? filter.getTipoCliente().toUpperCase() : null,
+                filter.getNome(),
+                filter.getDocumentoCliente(),
+                pageable);
 
         List<ClienteResponseDto> clientes = clientesPage.stream().map(cliente -> {
             ClienteResponseDto clienteResponseDto = clienteResponseDtoFactory.getClienteResponseDto(

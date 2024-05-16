@@ -4,10 +4,7 @@ import br.ada.caixa.dto.request.ContaRequestDto;
 import br.ada.caixa.dto.response.ContaResponseDto;
 import br.ada.caixa.service.ContaService;
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/conta")
@@ -23,5 +20,11 @@ public class ContaController {
     public void abrirConta(@RequestBody @Valid ContaRequestDto contaRequestDto) {
         contaService.abrirConta(contaRequestDto);
     }
+
+    @GetMapping("/{numeroConta}")
+    public ContaResponseDto pesquisarConta(@PathVariable Long numeroConta) {
+        return null;
+    }
+
 
 }
