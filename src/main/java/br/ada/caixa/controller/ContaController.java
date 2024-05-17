@@ -2,6 +2,7 @@ package br.ada.caixa.controller;
 
 import br.ada.caixa.dto.request.ContaRequestDto;
 import br.ada.caixa.dto.response.ContaResponseDto;
+import br.ada.caixa.dto.response.ContaResponsePageDto;
 import br.ada.caixa.service.ContaService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
@@ -23,8 +24,7 @@ public class ContaController {
 
     @GetMapping("/{numeroConta}")
     public ContaResponseDto pesquisarConta(@PathVariable Long numeroConta) {
-        return null;
+        return contaService.pesquisarConta(numeroConta);
     }
-
 
 }

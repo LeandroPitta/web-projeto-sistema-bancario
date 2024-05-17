@@ -15,5 +15,6 @@ public class ContaResponseDto {
     private Long numeroConta;
     private BigDecimal saldo;
     private LocalDate dataAbertura;
+    private String tipoConta;
 
 }

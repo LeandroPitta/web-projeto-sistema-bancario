@@ -41,9 +41,7 @@ public class ClienteController {
     public ClienteResponsePageDto pesquisarClientes(ClienteFilterDto filter,
                                                     @RequestParam(defaultValue = "0") int page,
                                                     @RequestParam(defaultValue = "" + Integer.MAX_VALUE) int size) {
-
         return clienteService.pesquisarClientes(filter, page, size);
-
     }
 
 }

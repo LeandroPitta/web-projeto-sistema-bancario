@@ -1,6 +1,7 @@
 package br.ada.caixa.service;
 
 import br.ada.caixa.dto.request.ContaRequestDto;
+import br.ada.caixa.dto.response.ContaResponseDto;
 import br.ada.caixa.entity.Cliente;
 import br.ada.caixa.entity.Conta;
 import br.ada.caixa.factory.ContaFactory;
@@ -41,4 +42,11 @@ public class ContaService {
 
         contaRepository.save(conta);
     }
+
+    public ContaResponseDto pesquisarConta(Long numeroConta) {
+        return contaRepository.findById(numeroConta)
+                .map(conta -> modelMapper.map(conta, ContaResponseDto.class))
+                .orElseThrow(() -> new RuntimeException("Conta não encontrada"));
+    }
+
 }
