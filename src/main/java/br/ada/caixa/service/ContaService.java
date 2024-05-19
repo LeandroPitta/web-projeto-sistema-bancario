@@ -1,8 +1,9 @@
 package br.ada.caixa.service;
 
+import br.ada.caixa.dto.filter.ClienteFilterDto;
+import br.ada.caixa.dto.filter.ContaFilterDto;
 import br.ada.caixa.dto.request.ContaRequestDto;
-import br.ada.caixa.dto.response.ContaEClienteResponseDto;
-import br.ada.caixa.dto.response.ContaResponseDto;
+import br.ada.caixa.dto.response.*;
 import br.ada.caixa.entity.Cliente;
 import br.ada.caixa.entity.Conta;
 import br.ada.caixa.factory.ContaFactory;
@@ -10,10 +11,15 @@ import br.ada.caixa.repository.ClienteRepository;
 import br.ada.caixa.repository.ContaRepository;
 import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ContaService {
@@ -49,6 +55,29 @@ public class ContaService {
         return contaRepository.findById(numeroConta)
                 .map(conta -> modelMapper.map(conta, ContaEClienteResponseDto.class))
                 .orElseThrow(() -> new RuntimeException("Conta não encontrada"));
+    }
+
+    public ContaResponsePageDto pesquisarContas(ContaFilterDto filter, int page, int size) {
+
+        Pageable pageable = PageRequest.of(page, size);
+        Page<Conta> contasPage = contaRepository.pesquisarPage(
+                filter.getTipoConta() != null ? filter.getTipoConta().toUpperCase() : null,
+                filter.getTipoCliente() != null ? filter.getTipoCliente().toUpperCase() : null,
+                pageable);
+
+        List<ContaEClienteResponseDto> contas = contasPage.stream()
+                .map(conta -> modelMapper.map(conta, ContaEClienteResponseDto.class))
+                .collect(Collectors.toList());
+
+        ContaResponsePageDto contaResponsePageDto = new ContaResponsePageDto();
+        contaResponsePageDto.setContent(contas);
+        contaResponsePageDto.setPage(page);
+        contaResponsePageDto.setSize(size);
+        contaResponsePageDto.setTotal(contasPage.getTotalElements());
+        contaResponsePageDto.setTotalPages(contasPage.getTotalPages());
+
+        return contaResponsePageDto;
+
     }
 
 }

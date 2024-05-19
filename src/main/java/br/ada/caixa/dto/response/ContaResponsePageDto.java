@@ -14,6 +14,6 @@ public class ContaResponsePageDto {
     private int page;
     private int size;
 
-    private List<ContaResponseDto> content;
+    private List<ContaEClienteResponseDto> content;
 
 }

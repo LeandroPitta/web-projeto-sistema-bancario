@@ -1,5 +1,6 @@
 package br.ada.caixa.controller;
 
+import br.ada.caixa.dto.filter.ContaFilterDto;
 import br.ada.caixa.dto.request.ContaRequestDto;
 import br.ada.caixa.dto.response.ContaEClienteResponseDto;
 import br.ada.caixa.dto.response.ContaResponseDto;
@@ -26,6 +27,13 @@ public class ContaController {
     @GetMapping("/{numeroConta}")
     public ContaEClienteResponseDto pesquisarConta(@PathVariable Long numeroConta) {
         return contaService.pesquisarConta(numeroConta);
+    }
+
+    @GetMapping
+    public ContaResponsePageDto pesquisarContas(ContaFilterDto filter,
+                                                @RequestParam(defaultValue = "0") int page,
+                                                @RequestParam(defaultValue = "" + Integer.MAX_VALUE) int size) {
+        return contaService.pesquisarContas(filter, page, size);
     }
 
 }
