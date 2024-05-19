@@ -2,13 +2,12 @@ package br.ada.caixa.config;
 
 import br.ada.caixa.dto.request.ClientePFRequestDto;
 import br.ada.caixa.dto.request.ClientePJRequestDto;
-import br.ada.caixa.dto.response.ClientePFResponseDto;
-import br.ada.caixa.dto.response.ClientePJResponseDto;
-import br.ada.caixa.dto.response.ClienteResponseDto;
-import br.ada.caixa.dto.response.ContaResponseDto;
+import br.ada.caixa.dto.response.*;
 import br.ada.caixa.entity.*;
 import br.ada.caixa.factory.ContaFactory;
+import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.spi.MappingContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -31,7 +30,31 @@ public class AppConfiguration {
         modelMapper.typeMap(ClientePJ.class, ClientePJResponseDto.class)
                 .addMapping(ClientePJ::getDocumentoCliente, ClientePJResponseDto::setCnpj);
 
+        Converter<Cliente, ClienteSimplificadoResponseDto> toClienteSimplificadoResponseDto = new Converter<Cliente, ClienteSimplificadoResponseDto>() {
+            public ClienteSimplificadoResponseDto convert(MappingContext<Cliente, ClienteSimplificadoResponseDto> context) {
+                Cliente source = context.getSource();
+                ClienteSimplificadoResponseDto destination = new ClienteSimplificadoResponseDto();
+
+                if (source instanceof ClientePF) {
+                    destination.setNome(((ClientePF) source).getNome());
+                } else if (source instanceof ClientePJ) {
+                    destination.setNome(((ClientePJ) source).getRazaoSocial());
+                }
+
+                destination.setDocumentoCliente(source.getDocumentoCliente());
+                destination.setDataCadastro(source.getDataCadastro());
+                destination.setTipoCliente(source.getTipoCliente());
+                destination.setStatus(source.getStatus());
+
+                return destination;
+            }
+        };
+
+        modelMapper.addConverter(toClienteSimplificadoResponseDto);
+
+
         return modelMapper;
+
     }
 
     @Bean

@@ -11,11 +11,10 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class ClientePJResponseDto implements ClienteResponseDto{
-    private String cnpj;
-    private String razaoSocial;
+public class ClienteSimplificadoResponseDto{
+    private String documentoCliente;
+    private String nome;
     private LocalDate dataCadastro;
     private String tipoCliente;
     private Status status;
-    private List<ContaResponseDto> contas;
 }

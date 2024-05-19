@@ -4,12 +4,13 @@ import br.ada.caixa.dto.response.ClientePFResponseDto;
 import br.ada.caixa.dto.response.ClientePJResponseDto;
 import br.ada.caixa.dto.response.ClienteResponseDto;
 
+//Melhor pratica dessa forma ou o metodo no DTO?
 public class ClienteResponseDtoFactory {
-    public ClienteResponseDto getClienteResponseDto(String instanciaCliente) {
-        switch (instanciaCliente) {
-            case "ClientePF":
+    public ClienteResponseDto getClienteResponseDto(String tipoCliente) {
+        switch (tipoCliente) {
+            case "PF":
                 return new ClientePFResponseDto();
-            case "ClientePJ":
+            case "PJ":
                 return new ClientePJResponseDto();
             default:
                 throw new IllegalArgumentException("Tipo de cliente inválido");

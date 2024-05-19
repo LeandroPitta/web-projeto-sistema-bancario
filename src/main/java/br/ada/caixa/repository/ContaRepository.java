@@ -13,7 +13,7 @@ public interface ContaRepository extends JpaRepository<Conta, Long> {
 
 
     @Query("SELECT c FROM Conta c " +
-            "WHERE :tipoConta IS NULL OR TYPE(c) = :tipoConta " +
+            "WHERE :tipoConta IS NULL OR c.tipoConta = :tipoConta " +
             "AND :numeroConta IS NULL OR c.numeroConta = :numeroConta")
     Page<Conta> pesquisarPage(@Param("tipoConta") String tipoConta,
                               @Param("numeroConta") String numeroConta,

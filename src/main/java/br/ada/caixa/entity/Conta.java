@@ -19,21 +19,15 @@ public abstract class Conta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long numeroConta;
 
-    @ManyToOne
-    @JoinColumn(name="documentoCliente", referencedColumnName="documentoCliente", nullable=false)
-    private Cliente cliente;
+    @Column(name = "tipo_conta", insertable = false, updatable = false)
+    private String tipoConta;
 
     private BigDecimal saldo;
 
     private LocalDate dataAbertura;
 
-    @Transient
-    private String tipoConta;
-
-    @PostLoad
-    private void setTipoConta() {
-        DiscriminatorValue val = this.getClass().getAnnotation(DiscriminatorValue.class);
-        this.tipoConta = val != null ? val.value() : null;
-    }
+    @ManyToOne
+    @JoinColumn(name="documentoCliente", referencedColumnName="documentoCliente", nullable=false)
+    private Cliente cliente;
 
 }

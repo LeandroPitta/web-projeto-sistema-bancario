@@ -23,6 +23,9 @@ public class Cliente {
 
     private LocalDate dataCadastro;
 
+    @Column(name = "tipo_pessoa", insertable = false, updatable = false)
+    private String tipoCliente;
+
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Conta> contas;
 

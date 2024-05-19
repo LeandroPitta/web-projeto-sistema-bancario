@@ -16,6 +16,7 @@ public class ClientePFResponseDto implements ClienteResponseDto{
     private String nome;
     private LocalDate dataNascimento;
     private LocalDate dataCadastro;
+    private String tipoCliente;
     private Status status;
     private List<ContaResponseDto> contas;
 }

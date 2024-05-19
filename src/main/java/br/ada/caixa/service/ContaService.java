@@ -1,12 +1,14 @@
 package br.ada.caixa.service;
 
 import br.ada.caixa.dto.request.ContaRequestDto;
+import br.ada.caixa.dto.response.ContaEClienteResponseDto;
 import br.ada.caixa.dto.response.ContaResponseDto;
 import br.ada.caixa.entity.Cliente;
 import br.ada.caixa.entity.Conta;
 import br.ada.caixa.factory.ContaFactory;
 import br.ada.caixa.repository.ClienteRepository;
 import br.ada.caixa.repository.ContaRepository;
+import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -43,9 +45,9 @@ public class ContaService {
         contaRepository.save(conta);
     }
 
-    public ContaResponseDto pesquisarConta(Long numeroConta) {
+    public ContaEClienteResponseDto pesquisarConta(Long numeroConta) {
         return contaRepository.findById(numeroConta)
-                .map(conta -> modelMapper.map(conta, ContaResponseDto.class))
+                .map(conta -> modelMapper.map(conta, ContaEClienteResponseDto.class))
                 .orElseThrow(() -> new RuntimeException("Conta não encontrada"));
     }
 

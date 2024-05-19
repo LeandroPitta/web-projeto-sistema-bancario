@@ -59,7 +59,7 @@ public class ClienteService {
         return clienteRepository.findById(documentoCliente)
                 .map(cliente -> {
                     ClienteResponseDto clienteResponseDto = clienteResponseDtoFactory.getClienteResponseDto(
-                            cliente.getClass().getSimpleName());
+                            cliente.getTipoCliente());
                     clienteResponseDto = modelMapper.map(cliente, clienteResponseDto.getClass());
                     return clienteResponseDto;
                 })
@@ -77,7 +77,7 @@ public class ClienteService {
 
         List<ClienteResponseDto> clientes = clientesPage.stream().map(cliente -> {
             ClienteResponseDto clienteResponseDto = clienteResponseDtoFactory.getClienteResponseDto(
-                    cliente.getClass().getSimpleName());
+                    cliente.getTipoCliente());
             clienteResponseDto = modelMapper.map(cliente, clienteResponseDto.getClass());
             return clienteResponseDto;
         }).collect(Collectors.toList());

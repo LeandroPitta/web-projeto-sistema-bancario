@@ -11,9 +11,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, String>{
 
-    @Query("SELECT c FROM Cliente c" +
-            " WHERE (((TYPE(c) = ClientePF AND :tipoCliente = 'PF')" +
-            " OR (TYPE(c) = ClientePJ AND :tipoCliente = 'PJ') OR :tipoCliente IS NULL)) " +
+    @Query("SELECT c FROM Cliente c " +
+            " WHERE (:tipoCliente IS NULL OR c.tipoCliente = :tipoCliente ) " +
             " AND (:nome IS NULL OR UPPER(c.nome) LIKE UPPER(CONCAT('%', :nome, '%')) " +
             " OR :nome IS NULL OR UPPER(c.razaoSocial) LIKE UPPER(CONCAT('%', :nome, '%'))) " +
             " AND (:documentoCliente IS NULL OR c.documentoCliente = :documentoCliente) ")
