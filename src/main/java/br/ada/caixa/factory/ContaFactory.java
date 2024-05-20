@@ -5,6 +5,7 @@ import br.ada.caixa.entity.ContaCorrente;
 import br.ada.caixa.entity.ContaInvestimento;
 import br.ada.caixa.entity.ContaPoupanca;
 import br.ada.caixa.enums.TipoConta;
+import br.ada.caixa.exceptions.ValidacaoException;
 
 public class ContaFactory {
     public Conta getConta(TipoConta tipoConta) {
@@ -16,7 +17,7 @@ public class ContaFactory {
             case INVESTIMENTO:
                 return new ContaInvestimento();
             default:
-                throw new IllegalArgumentException("Tipo de conta inválido");
+                throw new ValidacaoException("Tipo de conta inválido");
         }
     }
 }

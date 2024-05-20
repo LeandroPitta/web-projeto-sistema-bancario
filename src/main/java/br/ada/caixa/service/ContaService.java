@@ -1,6 +1,5 @@
 package br.ada.caixa.service;
 
-import br.ada.caixa.dto.filter.ClienteFilterDto;
 import br.ada.caixa.dto.filter.ContaFilterDto;
 import br.ada.caixa.dto.request.ContaRequestDto;
 import br.ada.caixa.dto.response.*;
@@ -9,7 +8,6 @@ import br.ada.caixa.entity.Conta;
 import br.ada.caixa.factory.ContaFactory;
 import br.ada.caixa.repository.ClienteRepository;
 import br.ada.caixa.repository.ContaRepository;
-import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

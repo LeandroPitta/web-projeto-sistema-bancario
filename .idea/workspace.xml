@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82e83c04-77ea-41cb-8791-a30a7e4f9ccf" name="Changes" comment="Finalizado o desenvolvimento do pesquisarConta.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/filter/ContaFilterDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/config/RestControllerExceptionAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/error/ErrorResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/exceptions/ValidacaoException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ContaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ContaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ContaResponsePageDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/ContaResponsePageDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/repository/ContaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/repository/ContaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/factory/ClienteResponseDtoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/factory/ClienteResponseDtoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/factory/ContaFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/factory/ContaFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/ContaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/ContaService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +62,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Dev/Java/AdaTech/modulo4",
+    "last_opened_file_path": "C:/Users/lspit/Downloads/web-pedido-compras",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -191,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716130356231</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Finalizado o desenvolvimento do pesquisarConta.">
+      <option name="closed" value="true" />
+      <created>1716131809854</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1716131809854</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
