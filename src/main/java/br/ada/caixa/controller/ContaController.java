@@ -30,7 +30,7 @@ public class ContaController {
     }
 
     @GetMapping
-    public ContaResponsePageDto pesquisarContas(ContaFilterDto filter,
+    public ContaResponsePageDto pesquisarContas(@Valid ContaFilterDto filter,
                                                 @RequestParam(defaultValue = "0") int page,
                                                 @RequestParam(defaultValue = "" + Integer.MAX_VALUE) int size) {
         return contaService.pesquisarContas(filter, page, size);

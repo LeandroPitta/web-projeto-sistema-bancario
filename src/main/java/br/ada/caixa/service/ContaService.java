@@ -5,6 +5,7 @@ import br.ada.caixa.dto.request.ContaRequestDto;
 import br.ada.caixa.dto.response.*;
 import br.ada.caixa.entity.Cliente;
 import br.ada.caixa.entity.Conta;
+import br.ada.caixa.enums.TipoConta;
 import br.ada.caixa.factory.ContaFactory;
 import br.ada.caixa.repository.ClienteRepository;
 import br.ada.caixa.repository.ContaRepository;
@@ -40,7 +41,7 @@ public class ContaService {
         Cliente cliente = clienteRepository.findById(contaRequestDto.getDocumentoCliente())
                 .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
 
-        Conta instanciaConta = contaFactory.getConta(contaRequestDto.getTipoConta());
+        Conta instanciaConta = contaFactory.getConta(TipoConta.valueOf(contaRequestDto.getTipoConta()));
         Conta conta = modelMapper.map(contaRequestDto, instanciaConta.getClass());
         conta.setCliente(cliente);
         conta.setSaldo(BigDecimal.valueOf(0));

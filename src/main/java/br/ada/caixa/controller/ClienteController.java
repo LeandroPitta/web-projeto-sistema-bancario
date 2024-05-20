@@ -3,6 +3,7 @@ package br.ada.caixa.controller;
 import br.ada.caixa.dto.filter.ClienteFilterDto;
 import br.ada.caixa.dto.request.ClientePFRequestDto;
 import br.ada.caixa.dto.request.ClientePJRequestDto;
+import br.ada.caixa.dto.response.ClientePFResponseDto;
 import br.ada.caixa.dto.response.ClienteResponseDto;
 import br.ada.caixa.dto.response.ClienteResponsePageDto;
 import br.ada.caixa.service.ClienteService;
@@ -24,11 +25,11 @@ public class ClienteController {
     @PostMapping("/pf")
     public ResponseEntity<?> cadastrarClientePF(@RequestBody @Valid ClientePFRequestDto clientePFRequestDto) {
         clienteService.cadastrarClientePF(clientePFRequestDto);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @PostMapping("/pj")
-    public void cadastrarClientePJ(@RequestBody ClientePJRequestDto clientePJRequestDto) {
+    public void cadastrarClientePJ(@RequestBody @Valid ClientePJRequestDto clientePJRequestDto) {
         clienteService.cadastrarClientePJ(clientePJRequestDto);
     }
 
@@ -38,7 +39,7 @@ public class ClienteController {
     }
 
     @GetMapping
-    public ClienteResponsePageDto pesquisarClientes(ClienteFilterDto filter,
+    public ClienteResponsePageDto pesquisarClientes(@Valid ClienteFilterDto filter,
                                                     @RequestParam(defaultValue = "0") int page,
                                                     @RequestParam(defaultValue = "" + Integer.MAX_VALUE) int size) {
         return clienteService.pesquisarClientes(filter, page, size);

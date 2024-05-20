@@ -19,6 +19,8 @@ public class ContaRequestDto {
     private String documentoCliente;
 
     @NotNull
-    private TipoConta tipoConta;
+    @NotBlank
+    @Pattern(regexp = "^(CORRENTE|POUPANCA|INVESTIMENTO)?$", message = "O tipo da conta deve ser CORRENTE, POUPANCA ou INVESTIMENTO")
+    private String tipoConta;
 
 }

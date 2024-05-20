@@ -4,6 +4,7 @@ import br.ada.caixa.dto.request.ClientePFRequestDto;
 import br.ada.caixa.dto.request.ClientePJRequestDto;
 import br.ada.caixa.dto.response.*;
 import br.ada.caixa.entity.*;
+import br.ada.caixa.factory.ClienteResponseDtoFactory;
 import br.ada.caixa.factory.ContaFactory;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
@@ -62,4 +63,8 @@ public class AppConfiguration {
         return new ContaFactory();
     }
 
+    @Bean
+    public ClienteResponseDtoFactory clienteResponseDtoFactory() {
+        return new ClienteResponseDtoFactory();
+    }
 }
