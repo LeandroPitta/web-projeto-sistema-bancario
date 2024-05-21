@@ -4,7 +4,6 @@ import br.ada.caixa.dto.filter.ClienteFilterDto;
 import br.ada.caixa.dto.request.ClientePFRequestDto;
 import br.ada.caixa.dto.request.ClientePJRequestDto;
 import br.ada.caixa.dto.request.ContaRequestDto;
-import br.ada.caixa.dto.response.ClientePFResponseDto;
 import br.ada.caixa.dto.response.ClienteResponseDto;
 import br.ada.caixa.dto.response.ClienteResponsePageDto;
 import br.ada.caixa.entity.Cliente;
@@ -21,7 +20,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -48,8 +46,6 @@ public class ClienteService {
 
         ClientePF cliente = modelMapper.map(clientePFRequestDto, ClientePF.class);
 
-        cliente.setDataNascimento(LocalDate.parse(
-                clientePFRequestDto.getDataNascimento(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
         cliente.setDataCadastro(LocalDate.now());
         cliente.setStatus(Status.ATIVO);
         clienteRepository.save(cliente);
@@ -62,12 +58,21 @@ public class ClienteService {
     }
 
     public void cadastrarClientePJ(ClientePJRequestDto clientePJRequestDto) {
+        clienteRepository.findById(clientePJRequestDto.getCnpj()).ifPresent(cliente -> {
+            throw new ValidacaoException("Cliente já possui cadastro");
+        });
+
         ClientePJ cliente = modelMapper.map(clientePJRequestDto, ClientePJ.class);
 
         cliente.setDataCadastro(LocalDate.now());
         cliente.setStatus(Status.ATIVO);
 
         clienteRepository.save(cliente);
+
+        ContaRequestDto conta = new ContaRequestDto();
+        conta.setDocumentoCliente(cliente.getDocumentoCliente());
+        conta.setTipoConta("CORRENTE");
+        contaService.abrirConta(conta);
     }
 
     public ClienteResponseDto pesquisarCliente(String documentoCliente) {
@@ -78,7 +83,7 @@ public class ClienteService {
                     clienteResponseDto = modelMapper.map(cliente, clienteResponseDto.getClass());
                     return clienteResponseDto;
                 })
-                .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
+                .orElseThrow(() -> new ValidacaoException("Cliente não encontrado"));
     }
 
     public ClienteResponsePageDto pesquisarClientes(ClienteFilterDto filter, int page, int size) {

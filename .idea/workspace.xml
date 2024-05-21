@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82e83c04-77ea-41cb-8791-a30a7e4f9ccf" name="Changes" comment="Desenvolvendo execeções.">
+    <list default="true" id="82e83c04-77ea-41cb-8791-a30a7e4f9ccf" name="Changes" comment="Tratando validações e incluindo abertura de conta no cadastramento do cliente.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/regrasnegocio/AberturaContaRegraNegocio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/config/AppConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ContaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ContaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/filter/ClienteFilterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/filter/ClienteFilterDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/filter/ContaFilterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/filter/ContaFilterDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/ClientePFRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/ClientePFRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/ContaRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/ContaRequestDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/ClienteService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/ContaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/ContaService.java" afterDir="false" />
     </list>
@@ -65,7 +61,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lspit/Downloads/web-pedido-compras&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lspit/Downloads/banco-web&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -211,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716167617229</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Tratando validações e incluindo abertura de conta no cadastramento do cliente.">
+      <option name="closed" value="true" />
+      <created>1716209177932</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716209177932</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -238,6 +242,7 @@
     <MESSAGE value="Desenvolvimento do pesquisarConta." />
     <MESSAGE value="Finalizado o desenvolvimento do pesquisarConta." />
     <MESSAGE value="Desenvolvendo execeções." />
-    <option name="LAST_COMMIT_MESSAGE" value="Desenvolvendo execeções." />
+    <MESSAGE value="Tratando validações e incluindo abertura de conta no cadastramento do cliente." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tratando validações e incluindo abertura de conta no cadastramento do cliente." />
   </component>
 </project>

@@ -6,9 +6,11 @@ import br.ada.caixa.dto.response.*;
 import br.ada.caixa.entity.Cliente;
 import br.ada.caixa.entity.Conta;
 import br.ada.caixa.enums.TipoConta;
+import br.ada.caixa.exceptions.ValidacaoException;
 import br.ada.caixa.factory.ContaFactory;
 import br.ada.caixa.repository.ClienteRepository;
 import br.ada.caixa.repository.ContaRepository;
+import br.ada.caixa.service.regrasnegocio.AberturaContaRegraNegocio;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -39,7 +41,9 @@ public class ContaService {
     public void abrirConta(ContaRequestDto contaRequestDto) {
 
         Cliente cliente = clienteRepository.findById(contaRequestDto.getDocumentoCliente())
-                .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
+                .orElseThrow(() -> new ValidacaoException("Cliente não encontrado"));
+
+        AberturaContaRegraNegocio.validarRegras(cliente, contaRequestDto);
 
         Conta instanciaConta = contaFactory.getConta(TipoConta.valueOf(contaRequestDto.getTipoConta()));
         Conta conta = modelMapper.map(contaRequestDto, instanciaConta.getClass());
@@ -53,7 +57,7 @@ public class ContaService {
     public ContaEClienteResponseDto pesquisarConta(Long numeroConta) {
         return contaRepository.findById(numeroConta)
                 .map(conta -> modelMapper.map(conta, ContaEClienteResponseDto.class))
-                .orElseThrow(() -> new RuntimeException("Conta não encontrada"));
+                .orElseThrow(() -> new ValidacaoException("Conta não encontrada"));
     }
 
     public ContaResponsePageDto pesquisarContas(ContaFilterDto filter, int page, int size) {

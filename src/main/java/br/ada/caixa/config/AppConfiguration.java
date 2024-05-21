@@ -6,11 +6,14 @@ import br.ada.caixa.dto.response.*;
 import br.ada.caixa.entity.*;
 import br.ada.caixa.factory.ClienteResponseDtoFactory;
 import br.ada.caixa.factory.ContaFactory;
+import org.modelmapper.AbstractConverter;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.spi.MappingContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.time.LocalDate;
 
 @Configuration
 public class AppConfiguration {
@@ -18,6 +21,19 @@ public class AppConfiguration {
     @Bean
     public ModelMapper modelMapper() {
         ModelMapper modelMapper = new ModelMapper();
+
+        Converter<String, LocalDate> dateConverter = new AbstractConverter<>() {
+            protected LocalDate convert(String source) {
+                return source == null ? null : LocalDate.parse(source);
+            }
+        };
+        Converter<LocalDate, String> dateStringConverter = new AbstractConverter<>() {
+            protected String convert(LocalDate source) {
+                return source == null ? null : source.toString(); //yyyy-MM-dd
+            }
+        };
+        modelMapper.addConverter(dateConverter);
+        modelMapper.addConverter(dateStringConverter);
 
         modelMapper.typeMap(ClientePFRequestDto.class, ClientePF.class)
                 .addMapping(ClientePFRequestDto::getCpf, ClientePF::setDocumentoCliente);
@@ -52,7 +68,6 @@ public class AppConfiguration {
         };
 
         modelMapper.addConverter(toClienteSimplificadoResponseDto);
-
 
         return modelMapper;
 

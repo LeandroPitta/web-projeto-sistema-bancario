@@ -24,11 +24,8 @@ public class ClientePFRequestDto {
     @Size(min = 3, message = "Razão Social deve ter pelo menos 3 caracteres")
     private String nome;
 
-
     @NotNull
-    @NotBlank
-    @Pattern(regexp = "^\\d{2}/\\d{2}/\\d{4}$",
-            message = "Data de nascimento deve estar no formato dd/MM/yyyy")
+    @Pattern(regexp = "^\\d{4}-\\d{2}-\\d{2}$", message = "Data de nascimento deve estar no formato yyyy-MM-dd")
     private String dataNascimento;
 
 }
