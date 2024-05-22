@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 @Getter
 @Setter
-public class DepositoRequestDto {
+public class SaqueOuDepositoRequestDto {
 
     @NotNull
     @NotBlank

@@ -1,4 +1,4 @@
-package br.ada.caixa.service.regrasnegocio;
+package br.ada.caixa.service.util;
 
 import br.ada.caixa.entity.Conta;
 import br.ada.caixa.exceptions.ValidacaoException;

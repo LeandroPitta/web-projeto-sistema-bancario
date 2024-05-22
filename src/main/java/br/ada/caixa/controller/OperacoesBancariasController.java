@@ -1,9 +1,11 @@
 package br.ada.caixa.controller;
 
-import br.ada.caixa.dto.request.DepositoRequestDto;
-import br.ada.caixa.dto.request.SaqueRequestDto;
+import br.ada.caixa.dto.request.SaqueOuDepositoRequestDto;
 import br.ada.caixa.dto.request.TransfereRequestDto;
 import br.ada.caixa.dto.response.ContaEClienteResponseDto;
+import br.ada.caixa.dto.response.DepositoResponseDto;
+import br.ada.caixa.dto.response.SaqueResponseDto;
+import br.ada.caixa.dto.response.TransfereResponseDto;
 import br.ada.caixa.service.OperacoesBancariasService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,19 +21,21 @@ public class OperacoesBancariasController {
     }
 
     @PostMapping("/deposito")
-    public ResponseEntity<?> depositar(@RequestBody DepositoRequestDto depositoRequestDto) {
-        operacoesBancariasService.depositar(depositoRequestDto);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<DepositoResponseDto> depositar(@RequestBody SaqueOuDepositoRequestDto depositoDto) {
+        DepositoResponseDto deposito = operacoesBancariasService.depositar(depositoDto);
+        return ResponseEntity.ok().body(deposito);
     }
 
     @PostMapping ("/saque")
-    public void sacar(@RequestBody SaqueRequestDto saqueRequestDto) {
-        operacoesBancariasService.sacar(saqueRequestDto);
+    public ResponseEntity<SaqueResponseDto> sacar(@RequestBody SaqueOuDepositoRequestDto saqueDto) {
+        SaqueResponseDto saque = operacoesBancariasService.sacar(saqueDto);
+        return ResponseEntity.ok().body(saque);
     }
 
     @PostMapping("/transfere")
-    public void transferir(@RequestBody TransfereRequestDto transfereRequestDto) {
-        operacoesBancariasService.transferir(transfereRequestDto);
+    public ResponseEntity<TransfereResponseDto> transferir(@RequestBody TransfereRequestDto transfereRequestDto) {
+        TransfereResponseDto transfereResponseDto = operacoesBancariasService.transferir(transfereRequestDto);
+        return ResponseEntity.ok().body(transfereResponseDto);
     }
 
     @GetMapping("/saldo/{numeroConta}")

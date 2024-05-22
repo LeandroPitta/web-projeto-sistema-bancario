@@ -4,17 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82e83c04-77ea-41cb-8791-a30a7e4f9ccf" name="Changes" comment="Desenvolvido a verificação de regra de negocio para abertura de conta poupanca.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/regrasnegocio/VerificacaoTitularContaCliente.java" afterDir="false" />
+    <list default="true" id="82e83c04-77ea-41cb-8791-a30a7e4f9ccf" name="Changes" comment="Desenvolvido operações consulta saldo e deposito.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/DepositoInvestimentoResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/DepositoPadraoResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/DepositoResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/SaqueResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/TransfereResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/regrasnegocio/DepositoRegrasNegocio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/regrasnegocio/SaqueRegrasNegocio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ContaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ContaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/OperacoesBancariasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/OperacoesBancariasController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/DepositoRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/DepositoRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/response/SaldoResponseDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/entity/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/entity/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/ClienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/DepositoRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/SaqueOuDepositoRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/InvestirRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/SaqueRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/TransfereRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/dto/request/TransfereRequestDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/OperacoesBancariasService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/OperacoesBancariasService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/regrasnegocio/VerificacaoTitularContaCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/util/VerificacaoTitularContaCliente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,8 +79,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="br.ada.caixa.dto.filter" />
       <recent name="br.ada.caixa.dto.response" />
+      <recent name="br.ada.caixa.dto.filter" />
     </key>
   </component>
   <component name="RunManager">
@@ -227,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716294275922</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Desenvolvido operações consulta saldo e deposito.">
+      <option name="closed" value="true" />
+      <created>1716343428484</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716343428484</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -256,6 +269,7 @@
     <MESSAGE value="Desenvolvendo execeções." />
     <MESSAGE value="Tratando validações e incluindo abertura de conta no cadastramento do cliente." />
     <MESSAGE value="Desenvolvido a verificação de regra de negocio para abertura de conta poupanca." />
-    <option name="LAST_COMMIT_MESSAGE" value="Desenvolvido a verificação de regra de negocio para abertura de conta poupanca." />
+    <MESSAGE value="Desenvolvido operações consulta saldo e deposito." />
+    <option name="LAST_COMMIT_MESSAGE" value="Desenvolvido operações consulta saldo e deposito." />
   </component>
 </project>
