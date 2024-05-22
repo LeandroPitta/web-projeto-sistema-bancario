@@ -3,7 +3,6 @@ package br.ada.caixa.controller;
 import br.ada.caixa.dto.filter.ClienteFilterDto;
 import br.ada.caixa.dto.request.ClientePFRequestDto;
 import br.ada.caixa.dto.request.ClientePJRequestDto;
-import br.ada.caixa.dto.response.ClientePFResponseDto;
 import br.ada.caixa.dto.response.ClienteResponseDto;
 import br.ada.caixa.dto.response.ClienteResponsePageDto;
 import br.ada.caixa.service.ClienteService;
@@ -22,13 +21,13 @@ public class ClienteController {
         this.clienteService = clienteService;
     }
 
-    @PostMapping("/pf")
+    @PostMapping("/cadastro/pf")
     public ResponseEntity<?> cadastrarClientePF(@RequestBody @Valid ClientePFRequestDto clientePFRequestDto) {
         clienteService.cadastrarClientePF(clientePFRequestDto);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @PostMapping("/pj")
+    @PostMapping("/cadastro/pj")
     public void cadastrarClientePJ(@RequestBody @Valid ClientePJRequestDto clientePJRequestDto) {
         clienteService.cadastrarClientePJ(clientePJRequestDto);
     }

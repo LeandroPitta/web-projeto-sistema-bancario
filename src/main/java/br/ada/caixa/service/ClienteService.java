@@ -46,6 +46,7 @@ public class ClienteService {
 
         ClientePF cliente = modelMapper.map(clientePFRequestDto, ClientePF.class);
 
+        cliente.setTipoCliente("PF");
         cliente.setDataCadastro(LocalDate.now());
         cliente.setStatus(Status.ATIVO);
         clienteRepository.save(cliente);
@@ -64,6 +65,7 @@ public class ClienteService {
 
         ClientePJ cliente = modelMapper.map(clientePJRequestDto, ClientePJ.class);
 
+        cliente.setTipoCliente("PJ");
         cliente.setDataCadastro(LocalDate.now());
         cliente.setStatus(Status.ATIVO);
 

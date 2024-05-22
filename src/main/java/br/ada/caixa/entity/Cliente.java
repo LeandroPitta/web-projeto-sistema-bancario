@@ -12,7 +12,7 @@ import java.util.List;
 @Setter
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name="tipo_pessoa", discriminatorType = DiscriminatorType.STRING, length = 10)
+@DiscriminatorColumn(name="tipo_cliente", discriminatorType = DiscriminatorType.STRING, length = 10)
 public class Cliente {
 
     @Id
@@ -23,7 +23,7 @@ public class Cliente {
 
     private LocalDate dataCadastro;
 
-    @Column(name = "tipo_pessoa", insertable = false, updatable = false)
+    @Column(name = "tipo_cliente", insertable = false, updatable = false)
     private String tipoCliente;
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)

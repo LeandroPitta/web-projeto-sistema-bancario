@@ -1,11 +1,11 @@
 package br.ada.caixa.controller;
 
 import br.ada.caixa.dto.request.DepositoRequestDto;
-import br.ada.caixa.dto.request.InvestirRequestDto;
 import br.ada.caixa.dto.request.SaqueRequestDto;
 import br.ada.caixa.dto.request.TransfereRequestDto;
-import br.ada.caixa.dto.response.SaldoResponseDto;
+import br.ada.caixa.dto.response.ContaEClienteResponseDto;
 import br.ada.caixa.service.OperacoesBancariasService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,8 +19,9 @@ public class OperacoesBancariasController {
     }
 
     @PostMapping("/deposito")
-    public void depositar(@RequestBody DepositoRequestDto depositoRequestDto) {
+    public ResponseEntity<?> depositar(@RequestBody DepositoRequestDto depositoRequestDto) {
         operacoesBancariasService.depositar(depositoRequestDto);
+        return ResponseEntity.ok().build();
     }
 
     @PostMapping ("/saque")
@@ -33,14 +34,9 @@ public class OperacoesBancariasController {
         operacoesBancariasService.transferir(transfereRequestDto);
     }
 
-    @GetMapping("/saldo/{idConta}")
-    public SaldoResponseDto consultarSaldo(@PathVariable String idConta) {
-        return operacoesBancariasService.consultarSaldo(idConta);
-    }
-
-    @PostMapping("/investimento")
-    public void investir(@RequestBody InvestirRequestDto investirRequestDto) {
-        operacoesBancariasService.investir(investirRequestDto);
+    @GetMapping("/saldo/{numeroConta}")
+    public ResponseEntity<ContaEClienteResponseDto> consultarSaldo(@PathVariable Long numeroConta) {
+        return ResponseEntity.ok().body(operacoesBancariasService.consultarSaldo(numeroConta));
     }
 
 }

@@ -19,7 +19,7 @@ public class ContaController {
         this.contaService = contaService;
     }
 
-    @PostMapping
+    @PostMapping("/abertura")
     public void abrirConta(@RequestBody @Valid ContaRequestDto contaRequestDto) {
         contaService.abrirConta(contaRequestDto);
     }
