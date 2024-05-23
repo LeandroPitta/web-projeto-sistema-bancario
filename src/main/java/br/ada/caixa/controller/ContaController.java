@@ -3,9 +3,9 @@ package br.ada.caixa.controller;
 import br.ada.caixa.dto.filter.ContaFilterDto;
 import br.ada.caixa.dto.request.ContaRequestDto;
 import br.ada.caixa.dto.response.ContaEClienteResponseDto;
-import br.ada.caixa.dto.response.ContaResponseDto;
 import br.ada.caixa.dto.response.ContaResponsePageDto;
-import br.ada.caixa.service.ContaService;
+import br.ada.caixa.service.AberturaContaService;
+import br.ada.caixa.service.PesquisaContaService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,27 +13,30 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/conta")
 public class ContaController {
 
-    final private ContaService contaService;
+    final private AberturaContaService AberturaContaService;
+    final private PesquisaContaService pesquisaContaService;
 
-    public ContaController(ContaService contaService) {
-        this.contaService = contaService;
+    public ContaController(AberturaContaService aberturaContaService,
+                           PesquisaContaService pesquisaContaService) {
+        this.AberturaContaService = aberturaContaService;
+        this.pesquisaContaService = pesquisaContaService;
     }
 
     @PostMapping("/abertura")
     public void abrirConta(@RequestBody @Valid ContaRequestDto contaRequestDto) {
-        contaService.abrirConta(contaRequestDto);
+        AberturaContaService.abrirConta(contaRequestDto);
     }
 
     @GetMapping("/{numeroConta}")
     public ContaEClienteResponseDto pesquisarConta(@PathVariable Long numeroConta) {
-        return contaService.pesquisarConta(numeroConta);
+        return pesquisaContaService.pesquisarConta(numeroConta);
     }
 
     @GetMapping
     public ContaResponsePageDto pesquisarContas(@Valid ContaFilterDto filter,
                                                 @RequestParam(defaultValue = "0") int page,
                                                 @RequestParam(defaultValue = "" + Integer.MAX_VALUE) int size) {
-        return contaService.pesquisarContas(filter, page, size);
+        return pesquisaContaService.pesquisarContas(filter, page, size);
     }
 
 }

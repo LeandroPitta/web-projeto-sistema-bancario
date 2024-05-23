@@ -15,7 +15,4 @@ public class ClienteFilterDto {
 
     private String nome;
 
-    @Pattern(regexp = "^(\\d{11}|\\d{14})$", message = "Documento do cliente deve ter 11 (CPF) ou 14 (CNPJ) caracteres numéricos")
-    private String documentoCliente;
-
 }

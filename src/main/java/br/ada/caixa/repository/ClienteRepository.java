@@ -14,11 +14,9 @@ public interface ClienteRepository extends JpaRepository<Cliente, String>{
     @Query("SELECT c FROM Cliente c " +
             " WHERE (:tipoCliente IS NULL OR c.tipoCliente = :tipoCliente ) " +
             " AND (:nome IS NULL OR UPPER(c.nome) LIKE UPPER(CONCAT('%', :nome, '%')) " +
-            " OR :nome IS NULL OR UPPER(c.razaoSocial) LIKE UPPER(CONCAT('%', :nome, '%'))) " +
-            " AND (:documentoCliente IS NULL OR c.documentoCliente = :documentoCliente) ")
+            " OR :nome IS NULL OR UPPER(c.razaoSocial) LIKE UPPER(CONCAT('%', :nome, '%'))) ")
     Page<Cliente> pesquisarPage(@Param("tipoCliente") String tipoCliente,
                                 @Param("nome") String nome,
-                                @Param("documentoCliente") String documentoCliente,
                                 Pageable pageable);
 
 }

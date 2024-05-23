@@ -9,13 +9,11 @@ import br.ada.caixa.dto.response.TransfereResponseDto;
 import br.ada.caixa.entity.Conta;
 import br.ada.caixa.exceptions.ValidacaoException;
 import br.ada.caixa.repository.ContaRepository;
-import br.ada.caixa.service.regrasnegocio.DepositoRegrasNegocio;
-import br.ada.caixa.service.regrasnegocio.SaqueRegrasNegocio;
+import br.ada.caixa.service.regras_negocio.DepositoRegrasNegocio;
+import br.ada.caixa.service.regras_negocio.SaqueRegrasNegocio;
 import br.ada.caixa.service.util.VerificacaoTitularContaCliente;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-
-import java.math.BigDecimal;
 
 @Service
 public class OperacoesBancariasService {

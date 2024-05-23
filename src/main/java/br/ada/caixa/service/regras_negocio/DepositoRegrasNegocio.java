@@ -1,6 +1,5 @@
-package br.ada.caixa.service.regrasnegocio;
+package br.ada.caixa.service.regras_negocio;
 
-import br.ada.caixa.dto.request.SaqueOuDepositoRequestDto;
 import br.ada.caixa.dto.response.DepositoInvestimentoResponseDto;
 import br.ada.caixa.dto.response.DepositoPadraoResponseDto;
 import br.ada.caixa.dto.response.DepositoResponseDto;
