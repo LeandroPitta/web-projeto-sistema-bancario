@@ -1,4 +1,4 @@
-package br.ada.caixa.service;
+package br.ada.caixa.service.cliente;
 
 import br.ada.caixa.dto.filter.ClienteFilterDto;
 import br.ada.caixa.dto.response.ClienteResponseDto;

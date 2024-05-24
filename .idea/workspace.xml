@@ -5,7 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82e83c04-77ea-41cb-8791-a30a7e4f9ccf" name="Changes" comment="Refatorando service.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/operacoes_bancarias/deposito/DepositoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/operacoes_bancarias/saldo/SaldoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/operacoes_bancarias/saque/SaqueService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/config/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/config/RestControllerExceptionAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/config/RestControllerExceptionAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ContaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/ContaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/OperacoesBancariasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/controller/OperacoesBancariasController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/AberturaContaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/conta/AberturaContaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/CadastroClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/cliente/CadastroClienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/OperacoesBancariasService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/operacoes_bancarias/transfere/TransfereService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/PesquisaClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/cliente/PesquisaClienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/PesquisaContaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/conta/PesquisaContaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/regras_negocio/AberturaContaRegrasNegocio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/conta/AberturaContaRegrasNegocio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/regras_negocio/DepositoRegrasNegocio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/operacoes_bancarias/deposito/DepositoRegrasNegocio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/regras_negocio/SaqueRegrasNegocio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/operacoes_bancarias/saque/SaqueRegrasNegocio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/util/VerificacaoTitularContaCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ada/caixa/service/util/VerificacaoTitularContaCliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-projeto-sistema-bancario.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/web-projeto-sistema-bancario.mv.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +34,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -243,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716466126142</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Refatorando service.">
+      <option name="closed" value="true" />
+      <created>1716467423698</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1716467423698</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

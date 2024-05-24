@@ -1,16 +1,18 @@
-package br.ada.caixa.service.regras_negocio;
+package br.ada.caixa.service.operacoes_bancarias.saque;
 
 import br.ada.caixa.dto.response.SaqueResponseDto;
 import br.ada.caixa.entity.Conta;
 import br.ada.caixa.exceptions.ValidacaoException;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
+@Service
 public class SaqueRegrasNegocio {
 
-    private static final BigDecimal TAXA_SAQUE_PJ = new BigDecimal("0.005");
+    private final BigDecimal TAXA_SAQUE_PJ = new BigDecimal("0.005");
 
-    public static SaqueResponseDto validarRegras(Conta conta, BigDecimal valorSaque) {
+    public SaqueResponseDto validarRegras(Conta conta, BigDecimal valorSaque) {
         SaqueResponseDto saqueResponseDto;
 
         saldoSuficiente(conta, valorSaque);
@@ -19,13 +21,13 @@ public class SaqueRegrasNegocio {
         return saqueResponseDto;
     }
 
-    private static void saldoSuficiente(Conta conta, BigDecimal valorSaque) {
+    private void saldoSuficiente(Conta conta, BigDecimal valorSaque) {
         if (conta.getSaldo().compareTo(valorSaque) < 0) {
             throw new ValidacaoException("Saldo insuficiente");
         }
     }
 
-    private static SaqueResponseDto cobrarTaxaClientePJ(Conta conta, BigDecimal valorSaque) {
+    private SaqueResponseDto cobrarTaxaClientePJ(Conta conta, BigDecimal valorSaque) {
 
         SaqueResponseDto saqueResponseDto = new SaqueResponseDto();
         if (conta.getCliente().getTipoCliente().equals("PJ") && conta.getTipoConta().equals("CORRENTE")) {

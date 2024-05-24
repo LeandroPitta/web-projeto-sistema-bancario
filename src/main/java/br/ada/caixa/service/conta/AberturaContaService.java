@@ -1,4 +1,4 @@
-package br.ada.caixa.service;
+package br.ada.caixa.service.conta;
 
 import br.ada.caixa.dto.request.ContaRequestDto;
 import br.ada.caixa.entity.Cliente;
@@ -8,7 +8,6 @@ import br.ada.caixa.exceptions.ValidacaoException;
 import br.ada.caixa.factory.ContaFactory;
 import br.ada.caixa.repository.ClienteRepository;
 import br.ada.caixa.repository.ContaRepository;
-import br.ada.caixa.service.regras_negocio.AberturaContaRegrasNegocio;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 

@@ -4,8 +4,8 @@ import br.ada.caixa.dto.filter.ContaFilterDto;
 import br.ada.caixa.dto.request.ContaRequestDto;
 import br.ada.caixa.dto.response.ContaEClienteResponseDto;
 import br.ada.caixa.dto.response.ContaResponsePageDto;
-import br.ada.caixa.service.AberturaContaService;
-import br.ada.caixa.service.PesquisaContaService;
+import br.ada.caixa.service.conta.AberturaContaService;
+import br.ada.caixa.service.conta.PesquisaContaService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 

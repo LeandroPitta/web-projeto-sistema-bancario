@@ -1,9 +1,11 @@
-package br.ada.caixa.service.regras_negocio;
+package br.ada.caixa.service.conta;
 
 import br.ada.caixa.dto.request.ContaRequestDto;
 import br.ada.caixa.entity.Cliente;
 import br.ada.caixa.exceptions.ValidacaoException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AberturaContaRegrasNegocio {
 
     public void validarRegras(Cliente cliente, ContaRequestDto contaRequestDto) {

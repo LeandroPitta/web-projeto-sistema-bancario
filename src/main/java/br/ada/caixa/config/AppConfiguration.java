@@ -6,7 +6,7 @@ import br.ada.caixa.dto.response.*;
 import br.ada.caixa.entity.*;
 import br.ada.caixa.factory.ClienteResponseDtoFactory;
 import br.ada.caixa.factory.ContaFactory;
-import br.ada.caixa.service.regras_negocio.AberturaContaRegrasNegocio;
+import br.ada.caixa.service.conta.AberturaContaRegrasNegocio;
 import org.modelmapper.AbstractConverter;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;

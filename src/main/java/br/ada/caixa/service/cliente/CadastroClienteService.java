@@ -1,16 +1,13 @@
-package br.ada.caixa.service;
+package br.ada.caixa.service.cliente;
 
-import br.ada.caixa.dto.request.ClientePFRequestDto;
-import br.ada.caixa.dto.request.ClientePJRequestDto;
 import br.ada.caixa.dto.request.ClienteRequestDto;
 import br.ada.caixa.dto.request.ContaRequestDto;
 import br.ada.caixa.entity.Cliente;
-import br.ada.caixa.entity.ClientePF;
-import br.ada.caixa.entity.ClientePJ;
 import br.ada.caixa.enums.Status;
 import br.ada.caixa.exceptions.ValidacaoException;
-import br.ada.caixa.factory.ClienteResponseDtoFactory;
 import br.ada.caixa.repository.ClienteRepository;
+import br.ada.caixa.service.conta.AberturaContaService;
+import br.ada.caixa.service.conta.PesquisaContaService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 

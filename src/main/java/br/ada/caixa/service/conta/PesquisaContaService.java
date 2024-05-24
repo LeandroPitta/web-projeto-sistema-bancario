@@ -1,4 +1,4 @@
-package br.ada.caixa.service;
+package br.ada.caixa.service.conta;
 
 import br.ada.caixa.dto.filter.ContaFilterDto;
 import br.ada.caixa.dto.response.*;
