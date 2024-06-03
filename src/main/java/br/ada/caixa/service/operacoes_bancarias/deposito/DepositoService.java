@@ -5,22 +5,16 @@ import br.ada.caixa.dto.response.DepositoResponseDto;
 import br.ada.caixa.entity.Conta;
 import br.ada.caixa.repository.ContaRepository;
 import br.ada.caixa.service.util.VerificacaoTitularContaCliente;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class DepositoService {
 
-    final private ContaRepository contaRepository;
-    final private DepositoRegrasNegocio depositoRegrasNegocio;
-    final private VerificacaoTitularContaCliente verificacaoTitularContaCliente;
-
-    public DepositoService(ContaRepository contaRepository,
-                           DepositoRegrasNegocio depositoRegrasNegocio,
-                           VerificacaoTitularContaCliente verificacaoTitularContaCliente) {
-        this.contaRepository = contaRepository;
-        this.depositoRegrasNegocio = depositoRegrasNegocio;
-        this.verificacaoTitularContaCliente = verificacaoTitularContaCliente;
-    }
+    private final ContaRepository contaRepository;
+    private final DepositoRegrasNegocio depositoRegrasNegocio;
+    private final VerificacaoTitularContaCliente verificacaoTitularContaCliente;
 
     public DepositoResponseDto depositar(SaqueOuDepositoRequestDto depositoRequestDto) {
 

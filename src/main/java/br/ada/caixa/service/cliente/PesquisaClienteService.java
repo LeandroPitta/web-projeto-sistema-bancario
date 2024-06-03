@@ -7,6 +7,7 @@ import br.ada.caixa.entity.Cliente;
 import br.ada.caixa.exceptions.ValidacaoException;
 import br.ada.caixa.factory.ClienteResponseDtoFactory;
 import br.ada.caixa.repository.ClienteRepository;
+import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,18 +18,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@AllArgsConstructor
 public class PesquisaClienteService {
 
-    final private ClienteRepository clienteRepository;
-    final private ModelMapper modelMapper;
-    final private ClienteResponseDtoFactory clienteResponseDtoFactory;
-
-    public PesquisaClienteService(ClienteRepository clienteRepository, ModelMapper modelMapper,
-                          ClienteResponseDtoFactory clienteResponseDtoFactory) {
-        this.clienteRepository = clienteRepository;
-        this.modelMapper = modelMapper;
-        this.clienteResponseDtoFactory = clienteResponseDtoFactory;
-    }
+    private final ClienteRepository clienteRepository;
+    private final ModelMapper modelMapper;
+    private final ClienteResponseDtoFactory clienteResponseDtoFactory;
 
     public ClienteResponseDto pesquisarCliente(String documentoCliente) {
         return clienteRepository.findById(documentoCliente)

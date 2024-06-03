@@ -1,12 +1,10 @@
 package br.ada.caixa.dto.response;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.math.BigDecimal;
 
-@Getter
-@Setter
+@Data
 public class DepositoInvestimentoResponseDto implements DepositoResponseDto{
     BigDecimal valorDeposito;
     BigDecimal valorRendimento;

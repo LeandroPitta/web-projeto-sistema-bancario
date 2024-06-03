@@ -2,13 +2,11 @@ package br.ada.caixa.entity;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.time.LocalDate;
 
-@Getter
-@Setter
+@Data
 @Entity
 @DiscriminatorValue("PF")
 public class ClientePF extends Cliente{

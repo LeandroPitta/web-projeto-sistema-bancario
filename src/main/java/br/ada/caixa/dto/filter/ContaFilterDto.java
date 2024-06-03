@@ -1,11 +1,9 @@
 package br.ada.caixa.dto.filter;
 
 import jakarta.validation.constraints.Pattern;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class ContaFilterDto {
 
     @Pattern(regexp = "^(CORRENTE|POUPANCA|INVESTIMENTO)?$", message = "O tipo da conta deve ser CORRENTE, POUPANCA ou INVESTIMENTO")

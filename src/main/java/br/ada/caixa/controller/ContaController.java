@@ -22,7 +22,7 @@ public class ContaController {
         this.pesquisaContaService = pesquisaContaService;
     }
 
-    @PostMapping("/abertura")
+    @PostMapping
     public void abrirConta(@RequestBody @Valid ContaRequestDto contaRequestDto) {
         AberturaContaService.abrirConta(contaRequestDto);
     }

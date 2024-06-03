@@ -4,12 +4,10 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.hibernate.validator.constraints.br.CNPJ;
 
-@Getter
-@Setter
+@Data
 public class ClientePJRequestDto implements ClienteRequestDto{
 
     @NotNull

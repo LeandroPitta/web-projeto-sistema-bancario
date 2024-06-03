@@ -5,12 +5,10 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.hibernate.validator.constraints.br.CPF;
 
-@Getter
-@Setter
+@Data
 public class ClientePFRequestDto implements ClienteRequestDto{
 
     @NotNull

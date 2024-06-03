@@ -9,24 +9,17 @@ import br.ada.caixa.repository.ContaRepository;
 import br.ada.caixa.service.operacoes_bancarias.deposito.DepositoRegrasNegocio;
 import br.ada.caixa.service.operacoes_bancarias.saque.SaqueRegrasNegocio;
 import br.ada.caixa.service.util.VerificacaoTitularContaCliente;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class TransfereService {
 
-    final private ContaRepository contaRepository;
-    final private SaqueRegrasNegocio saqueRegrasNegocio;
-    final private DepositoRegrasNegocio depositoRegrasNegocio;
-    final private VerificacaoTitularContaCliente verificacaoTitularContaCliente;
-
-    public TransfereService(ContaRepository contaRepository, SaqueRegrasNegocio saqueRegrasNegocio,
-                            DepositoRegrasNegocio depositoRegrasNegocio,
-                            VerificacaoTitularContaCliente verificacaoTitularContaCliente) {
-        this.contaRepository = contaRepository;
-        this.saqueRegrasNegocio = saqueRegrasNegocio;
-        this.depositoRegrasNegocio = depositoRegrasNegocio;
-        this.verificacaoTitularContaCliente = verificacaoTitularContaCliente;
-    }
+    private final ContaRepository contaRepository;
+    private final SaqueRegrasNegocio saqueRegrasNegocio;
+    private final DepositoRegrasNegocio depositoRegrasNegocio;
+    private final VerificacaoTitularContaCliente verificacaoTitularContaCliente;
 
     public TransfereResponseDto transferir(TransfereRequestDto transfereRequestDto) {
 

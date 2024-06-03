@@ -7,27 +7,19 @@ import br.ada.caixa.enums.Status;
 import br.ada.caixa.exceptions.ValidacaoException;
 import br.ada.caixa.repository.ClienteRepository;
 import br.ada.caixa.service.conta.AberturaContaService;
-import br.ada.caixa.service.conta.PesquisaContaService;
+import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 
 @Service
+@AllArgsConstructor
 public class CadastroClienteService {
 
-    final private ClienteRepository clienteRepository;
-    final private ModelMapper modelMapper;
-    final private PesquisaContaService pesquisaContaService;
-    final private AberturaContaService aberturaContaService;
-
-    public CadastroClienteService(ClienteRepository clienteRepository, ModelMapper modelMapper,
-                                  PesquisaContaService pesquisaContaService, AberturaContaService aberturaContaService) {
-        this.clienteRepository = clienteRepository;
-        this.modelMapper = modelMapper;
-        this.pesquisaContaService = pesquisaContaService;
-        this.aberturaContaService = aberturaContaService;
-    }
+    private final ClienteRepository clienteRepository;
+    private final ModelMapper modelMapper;
+    private final AberturaContaService aberturaContaService;
 
     public <T extends ClienteRequestDto> void cadastrarCliente(T clienteRequestDto, Class<? extends Cliente> clienteClass) {
 

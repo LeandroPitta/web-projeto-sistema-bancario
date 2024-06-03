@@ -26,13 +26,13 @@ public class ClienteController {
         this.pesquisaClienteService = pesquisaClienteService;
     }
 
-    @PostMapping("/cadastro/pf")
+    @PostMapping("/pf")
     public ResponseEntity<?> cadastrarClientePF(@RequestBody @Valid ClientePFRequestDto clientePFRequestDto) {
         cadastroClienteService.cadastrarCliente(clientePFRequestDto, ClientePF.class);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @PostMapping("/cadastro/pj")
+    @PostMapping("/pj")
     public void cadastrarClientePJ(@RequestBody @Valid ClientePJRequestDto clientePJRequestDto) {
         cadastroClienteService.cadastrarCliente(clientePJRequestDto, ClientePJ.class);
     }

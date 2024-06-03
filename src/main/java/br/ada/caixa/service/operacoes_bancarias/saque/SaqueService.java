@@ -5,22 +5,16 @@ import br.ada.caixa.dto.response.SaqueResponseDto;
 import br.ada.caixa.entity.Conta;
 import br.ada.caixa.repository.ContaRepository;
 import br.ada.caixa.service.util.VerificacaoTitularContaCliente;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class SaqueService {
 
-    final private ContaRepository contaRepository;
-    final private SaqueRegrasNegocio saqueRegrasNegocio;
-    final private VerificacaoTitularContaCliente verificacaoTitularContaCliente;
-
-    public SaqueService(ContaRepository contaRepository,
-                        SaqueRegrasNegocio saqueRegrasNegocio,
-                        VerificacaoTitularContaCliente verificacaoTitularContaCliente) {
-        this.contaRepository = contaRepository;
-        this.saqueRegrasNegocio = saqueRegrasNegocio;
-        this.verificacaoTitularContaCliente = verificacaoTitularContaCliente;
-    }
+    private final ContaRepository contaRepository;
+    private final SaqueRegrasNegocio saqueRegrasNegocio;
+    private final VerificacaoTitularContaCliente verificacaoTitularContaCliente;
 
     public SaqueResponseDto sacar(SaqueOuDepositoRequestDto saqueRequestDto) {
 

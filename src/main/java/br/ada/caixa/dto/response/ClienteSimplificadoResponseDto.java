@@ -1,16 +1,11 @@
 package br.ada.caixa.dto.response;
 
 import br.ada.caixa.enums.Status;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.List;
 
-@Getter
-@Setter
-@ToString
+@Data
 public class ClienteSimplificadoResponseDto{
     private String documentoCliente;
     private String nome;

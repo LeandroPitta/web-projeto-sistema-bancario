@@ -1,5 +1,6 @@
 package br.ada.caixa.dto.response;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -7,9 +8,7 @@ import lombok.ToString;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@Getter
-@Setter
-@ToString
+@Data
 public class ContaEClienteResponseDto {
 
     private Long numeroConta;

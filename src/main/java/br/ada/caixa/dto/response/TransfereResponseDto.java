@@ -1,12 +1,12 @@
 package br.ada.caixa.dto.response;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
 
-@Getter
-@Setter
+@Data
 public class TransfereResponseDto {
     private Long numeroContaOrigem;
     private String tipoClienteOrigem;
